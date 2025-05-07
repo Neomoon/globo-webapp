@@ -37,6 +37,11 @@ variable "api_key" {
   description = "(Required) API key for web app to talk to SaaS platform."
 }
 
+variable "playbook_repository" {
+  type        = string
+  description = "(Required) Uri of Ansible playbook"
+}
+
 variable "tfe_organization" {
   type        = string
   description = "(Optional) Terraform Cloud Organization name"
