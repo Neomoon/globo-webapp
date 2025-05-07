@@ -50,7 +50,7 @@ resource "aws_instance" "main" {
 
 }
 
-resource "terraform_data" "webapp"{
+resource "terraform_data" "webapp" {
   triggers_replace = [
     length(aws_instance.main.*.id),
     join(",", aws_instance.main.*.id)
@@ -62,7 +62,7 @@ resource "terraform_data" "webapp"{
       site_name = "${local.name_prefix}-taco-wagon"
       api_key   = var.api_key
     })
-    destination = "/home/ec2-user/application.config"    
+    destination = "/home/ec2-user/application.config"
   }
 
   connection {
